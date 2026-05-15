@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/**
+ * @theme — Tailwind v4 design tokens.
+ * SYNC RULE: Keep these values in sync with src/lib/tokens.ts.
+ * Change a token here → Tailwind utility classes update everywhere.
+ */
+@theme {
+  /* ── Colors ─────────────────────────────────────────── */
+  --color-orange:       #FF6B35;
+  --color-orange-dark:  #e85a22;
+  --color-orange-light: #fff4ef;
+  --color-orange-mid:   #ffdcca;
+
+  --color-dark:         #0f0f0f;
+  --color-dark-2:       #1a1a1a;
+  --color-site-text:    #1C1C1E;
+  --color-gray:         #6B7280;
+  --color-gray-light:   #F5F5F7;
+  --color-site-border:  #E5E7EB;
+  --color-green:        #10B981;
+  --color-purple:       #6C63FF;
+
+  /* ── Font ────────────────────────────────────────────── */
+  /* --font-noto-sans is injected by next/font at runtime  */
+  --font-sans: var(--font-noto-sans);
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-orange: 0 8px 32px rgba(255, 107, 53, 0.28);
+  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-large:  0 20px 60px rgba(0, 0, 0, 0.12);
+
+  /* ── Border Radius ───────────────────────────────────── */
+  --radius-base: 14px;
+  --radius-sm:   10px;
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --spacing-side-gap: 5%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-site-text);
+  font-family: var(--font-sans, "Noto Sans", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-orange);
+  color: #fff;
+}
+
+/* ── Flip Card ───────────────────────────────────────────── */
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* ── Marquee ─────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

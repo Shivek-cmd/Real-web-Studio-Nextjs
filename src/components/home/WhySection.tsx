@@ -14,7 +14,7 @@ const TABS = [
     ),
     title: "Too Expensive",
     body: "Agencies charge $3,000–$10,000 upfront. That's money most small businesses simply don't have sitting around — and the ROI never shows up.",
-    image: "https://images.pexels.com/photos/5900134/pexels-photo-5900134.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/home/problem-1.jpg",
     alt: "Small business owner looking stressed at an expensive invoice next to her laptop",
   },
   {
@@ -26,7 +26,7 @@ const TABS = [
     ),
     title: "Takes Months",
     body: "Traditional web projects drag on for 2–4 months. Your competitors are already getting customers while you're still waiting on revision round three.",
-    image: "https://images.pexels.com/photos/3760811/pexels-photo-3760811.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/home/problem-2.jpg",
     alt: "Frustrated business owner resting his head on his desk waiting for his website to launch",
   },
   {
@@ -38,7 +38,7 @@ const TABS = [
     ),
     title: "Too Complicated",
     body: "WordPress, plugins, hosting, domains, SSL, updates — it's a full-time job just to keep the lights on. You started a business, not a tech department.",
-    image: "https://images.pexels.com/photos/4226215/pexels-photo-4226215.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/home/problem-3.jpg",
     alt: "Woman covering her face in frustration in front of a laptop, overwhelmed by website technology",
   },
   {
@@ -52,7 +52,7 @@ const TABS = [
     ),
     title: "Abandoned After Launch",
     body: "Most agencies disappear after they cash your cheque. Updates, bugs, backups — suddenly your problem. Your site breaks and no one picks up the phone.",
-    image: "https://images.pexels.com/photos/5239941/pexels-photo-5239941.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/home/problem-4.jpg",
     alt: "Frustrated business owner leaning over her desk with phone and laptop, unable to reach web agency for support",
   },
 ];

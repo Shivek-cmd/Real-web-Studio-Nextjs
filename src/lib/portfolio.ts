@@ -52,8 +52,7 @@ export const portfolioItems: PortfolioItem[] = [
     result: "Intake fully booked in 30 days",
     description:
       "Edmonton's leading Class 1 truck training school had a reputation that did not match their online presence. A mobile-first site targeting high-intent keywords filled their next full intake within 30 days of going live.",
-    image:
-      "https://images.pexels.com/photos/2519374/pexels-photo-2519374.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: "/portfolio/protrucktraining/screenshot_1.5x_postspark_2026-05-20_00-26-40.png",
     tags: ["Web Design", "Local SEO", "Mobile-First", "Lead Generation", "Google Rankings"],
     website: "https://protrucktraining.ca",
     service: "Website + Local SEO",
@@ -80,7 +79,16 @@ export const portfolioItems: PortfolioItem[] = [
           "Phone and form CTAs were placed where mobile visitors naturally pause.",
           "Location and trust content was expanded to support Edmonton-area organic visibility.",
         ],
-        images: planningImages,
+        images: [
+          {
+            src: "/portfolio/protrucktraining/screenshot-1.png",
+            alt: "Pro Truck Training homepage screenshot showing course and enrollment content",
+          },
+          {
+            src: "/portfolio/protrucktraining/screenshot-2.png",
+            alt: "Pro Truck Training website screenshot showing licensing and training details",
+          },
+        ],
       },
       {
         label: "Result",
@@ -90,7 +98,13 @@ export const portfolioItems: PortfolioItem[] = [
           "The lead path reduced hesitation by making costs, timing, and eligibility easier to understand.",
           "The school gained a stronger web presence without losing its practical, local personality.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/protrucktraining/screenshot-3.png",
+            alt: "Pro Truck Training website screenshot showing trust and contact sections",
+            wide: true,
+          },
+        ],
       },
     ],
   },
@@ -101,8 +115,7 @@ export const portfolioItems: PortfolioItem[] = [
     result: "3x demo bookings at launch",
     description:
       "A brand-new AI platform needed a site as sharp as its product. We built a conversion-focused landing page with clear product messaging and a seamless demo booking flow, live in 48 hours and outperforming their MVP page from day one.",
-    image:
-      "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: "/portfolio/bizbull/screenshot_1.5x_postspark_2026-05-20_00-30-14.png",
     tags: ["Web Design", "Brand Launch", "Conversion", "Landing Page", "AI Platform"],
     website: "https://bizbull.ai",
     service: "SaaS Landing Page",
@@ -131,12 +144,12 @@ export const portfolioItems: PortfolioItem[] = [
         ],
         images: [
           {
-            src: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Software team reviewing a product roadmap",
+            src: "/portfolio/bizbull/screenshot-1.png",
+            alt: "BizBull.ai website screenshot showing AI lead response messaging",
           },
           {
-            src: "https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Team aligning on SaaS launch messaging",
+            src: "/portfolio/bizbull/screenshot-2.png",
+            alt: "BizBull.ai website screenshot showing product benefits and lead handling",
           },
         ],
       },
@@ -148,7 +161,13 @@ export const portfolioItems: PortfolioItem[] = [
           "The booking journey reduced unnecessary clicks between interest and action.",
           "The page created a more credible first impression for early-stage sales conversations.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/bizbull/screenshot-3.png",
+            alt: "BizBull.ai website screenshot showing lead capture and AI human help positioning",
+            wide: true,
+          },
+        ],
       },
     ],
   },
@@ -159,8 +178,7 @@ export const portfolioItems: PortfolioItem[] = [
     result: "#1 Google for immigration consultant Edmonton",
     description:
       "RCIC-certified consultants with a 99% visa approval rate but near-zero visibility on Google. Targeted local SEO and a trust-forward redesign pushed them to the top position for their highest-value search terms.",
-    image:
-      "https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: "/portfolio/optiwaysimmigration/screenshot_1.5x_postspark_2026-05-20_00-22-38.png",
     tags: ["Local SEO", "Web Design", "Trust Design", "Google Rankings", "RCIC Certified"],
     website: "https://optiwaysimmigration.com",
     service: "Website + SEO",
@@ -189,12 +207,12 @@ export const portfolioItems: PortfolioItem[] = [
         ],
         images: [
           {
-            src: "https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Consultant discussing application paperwork",
+            src: "/portfolio/optiwaysimmigration/screenshot-1.png",
+            alt: "Optiways Immigration website screenshot showing consultation and immigration services",
           },
           {
-            src: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Professional consultation at an office desk",
+            src: "/portfolio/optiwaysimmigration/screenshot-2.png",
+            alt: "Optiways Immigration website screenshot showing trust and service content",
           },
         ],
       },
@@ -206,7 +224,13 @@ export const portfolioItems: PortfolioItem[] = [
           "Page titles and content were rewritten to match how clients search.",
           "The new structure supported both organic rankings and paid traffic quality.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/optiwaysimmigration/screenshot-3.png",
+            alt: "Optiways Immigration website screenshot showing immigration service positioning",
+            wide: true,
+          },
+        ],
       },
     ],
   },
@@ -267,7 +291,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A concrete supplier with a proven product and zero digital presence. A project-focused site with instant quote forms and targeted Google Ads tripled inbound quote requests from Edmonton's construction market within 6 weeks.",
     image:
-      "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "/portfolio/oilcityreadymix/screenshot_1.5x_postspark_2026-05-20_00-18-44.png",
     tags: ["Web Design", "Google Ads", "Quote Forms", "Construction", "Edmonton Market"],
     website: "https://oilcityreadymix.com",
     service: "Website + Google Ads",
@@ -296,12 +320,12 @@ export const portfolioItems: PortfolioItem[] = [
         ],
         images: [
           {
-            src: "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Construction planning on a jobsite",
+            src: "/portfolio/oilcityreadymix/screenshot-1.png",
+            alt: "Oil City Ready Mix website screenshot showing ready-mix concrete services",
           },
           {
-            src: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Concrete construction work in progress",
+            src: "/portfolio/oilcityreadymix/screenshot-2.png",
+            alt: "Oil City Ready Mix website screenshot showing concrete delivery and service details",
           },
         ],
       },
@@ -313,7 +337,13 @@ export const portfolioItems: PortfolioItem[] = [
           "Quote CTAs were placed around project intent and service details.",
           "The company moved from little online visibility to a repeatable inquiry engine.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/oilcityreadymix/screenshot-3.png",
+            alt: "Oil City Ready Mix website screenshot showing service and quote content",
+            wide: true,
+          },
+        ],
       },
     ],
   },
@@ -325,7 +355,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "40+ senior HR consultants, 500+ national clients, and a website that buried all of it. A content-led redesign built around their deep expertise positioned JER as the go-to authority, driving a surge in high-value inbound inquiries.",
     image:
-      "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "/portfolio/jerhrgroup/screenshot_1.5x_postspark_2026-05-20_00-15-18.png",
     tags: ["Web Redesign", "Content Strategy", "Lead Gen", "HR Consulting", "National"],
     website: "https://jerhrgroup.com",
     service: "Redesign + Content",
@@ -354,12 +384,12 @@ export const portfolioItems: PortfolioItem[] = [
         ],
         images: [
           {
-            src: "https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "HR consulting team in a strategy meeting",
+            src: "/portfolio/jerhrgroup/screenshot-1.png",
+            alt: "JER HR Group website screenshot showing HR consulting services",
           },
           {
-            src: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=900",
-            alt: "Professional consultants discussing a client strategy",
+            src: "/portfolio/jerhrgroup/screenshot-2.png",
+            alt: "JER HR Group website screenshot showing consultant expertise and service content",
           },
         ],
       },
@@ -371,7 +401,13 @@ export const portfolioItems: PortfolioItem[] = [
           "The content tone balanced executive credibility with practical next steps.",
           "The new structure supported ongoing content and search growth.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/jerhrgroup/screenshot-3.png",
+            alt: "JER HR Group website screenshot showing lead generation and consulting content",
+            wide: true,
+          },
+        ],
       },
     ],
   },

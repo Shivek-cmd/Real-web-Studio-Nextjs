@@ -4,6 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactMap from "@/components/contact/ContactMap";
+import BookingCalendar from "@/components/home/BookingCalendar";
 import JsonLd from "@/components/seo/JsonLd";
 import { webPageSchema } from "@/lib/schema";
 
@@ -40,6 +41,7 @@ export default function ContactPage() {
       />
       <ContactHero />
       <ContactForm />
+      <BookingCalendar />
       <ContactMap />
     </>
   );

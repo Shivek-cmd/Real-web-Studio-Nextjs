@@ -18,12 +18,11 @@ export default function BookingCalendar() {
         <div className="overflow-hidden rounded-[14px] border border-site-border shadow-card">
           <iframe
             src="https://api.leadconnectorhq.com/widget/booking/QZbyg6axqsgkINmlfT6a"
-            style={{ width: "100%", border: "none", overflow: "hidden" }}
+            style={{ width: "100%", height: "700px", border: "none", display: "block" }}
             scrolling="no"
-           id="QZbyg6axqsgkINmlfT6a_1775755299382"
+            id="QZbyg6axqsgkINmlfT6a_1775755299382"
             title="Book a Discovery Call — RealWebStudio"
-            className="min-h-[700px] w-full"
-            loading="lazy"
+            className="h-[700px] min-h-[700px] w-full"
           />
         </div>
 

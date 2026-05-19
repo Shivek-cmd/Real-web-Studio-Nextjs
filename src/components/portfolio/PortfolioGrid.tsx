@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,10 +16,21 @@ function PortfolioCard({
   total: number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [useStackEffect, setUseStackEffect] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const update = () => setUseStackEffect(media.matches);
+
+    update();
+    media.addEventListener("change", update);
+
+    return () => media.removeEventListener("change", update);
+  }, []);
 
   const isLast = index === total - 1;
   const scale = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.94]);
@@ -30,22 +41,20 @@ function PortfolioCard({
   const extraCount = item.tags.length - 4;
 
   return (
-    <div ref={containerRef} className="h-[78vh] min-h-[620px]">
+    <div ref={containerRef} className="border-t border-site-border lg:h-[78vh] lg:min-h-[620px] lg:border-t-0">
       <motion.div
         style={{
-          scale,
-          opacity,
+          scale: useStackEffect ? scale : 1,
+          opacity: useStackEffect ? opacity : 1,
           transformOrigin: "top center",
-          position: "sticky",
-          top: 0,
           zIndex: index + 1,
         }}
-        className="relative flex h-[86vh] min-h-[620px] items-center overflow-hidden bg-white"
+        className="relative flex bg-white py-12 sm:py-14 lg:sticky lg:top-0 lg:h-[86vh] lg:min-h-[620px] lg:items-center lg:overflow-hidden lg:py-0"
       >
-        <div className="absolute inset-x-0 top-0 h-px bg-site-border" />
+        <div className="absolute inset-x-0 top-0 hidden h-px bg-site-border lg:block" />
 
-        <div className="mx-auto w-full max-w-300 px-8 lg:px-12">
-          <div className="grid grid-cols-1 items-center gap-y-8 lg:grid-cols-[64px_1fr_380px] lg:gap-x-24 lg:gap-y-0">
+        <div className="mx-auto w-full max-w-300 px-[5%] sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 items-center gap-y-7 lg:grid-cols-[56px_minmax(0,1fr)_minmax(320px,380px)] lg:gap-x-16 xl:gap-x-24 lg:gap-y-0">
             <div className="hidden lg:flex lg:justify-center">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange text-[13px] font-extrabold tracking-wide text-white shadow-orange">
                 {num}
@@ -66,7 +75,7 @@ function PortfolioCard({
                 {item.industry}
               </p>
 
-              <h2 className="mb-4 text-[34px] font-extrabold leading-[1.1] tracking-[-1px] text-site-text sm:text-[42px] lg:text-[50px]">
+              <h2 className="mb-4 text-[30px] font-extrabold leading-[1.12] tracking-[-0.5px] text-site-text sm:text-[38px] lg:text-[50px]">
                 {item.client}
               </h2>
 
@@ -75,7 +84,7 @@ function PortfolioCard({
                 {item.result}
               </div>
 
-              <p className="mb-7 max-w-120 text-[14.5px] leading-[1.8] text-gray">
+              <p className="mb-6 max-w-120 text-[14.5px] leading-[1.75] text-gray sm:mb-7">
                 {item.description}
               </p>
 
@@ -95,38 +104,38 @@ function PortfolioCard({
                 )}
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
                 <Link
                   href={`/portfolio/${item.id}`}
-                  className="rounded-full bg-orange px-6 py-3 text-[13px] font-bold text-white shadow-orange transition-all duration-200 hover:-translate-y-px hover:bg-orange-dark"
+                  className="rounded-full bg-orange px-6 py-3 text-center text-[13px] font-bold text-white shadow-orange transition-all duration-200 hover:-translate-y-px hover:bg-orange-dark"
                 >
                   View Work
                 </Link>
                 <Link
                   href="/contact"
-                  className="rounded-full border border-site-border px-6 py-3 text-[13px] font-semibold text-site-text transition-all duration-200 hover:border-orange hover:text-orange"
+                  className="rounded-full border border-site-border px-6 py-3 text-center text-[13px] font-semibold text-site-text transition-all duration-200 hover:border-orange hover:text-orange"
                 >
                   Start a Project
                 </Link>
               </div>
             </div>
 
-            <div className="relative h-55 w-full overflow-hidden rounded-[18px] sm:h-65 lg:h-77.5">
+            <div className="relative h-[220px] w-full overflow-hidden rounded-[14px] sm:h-[300px] lg:h-77.5 lg:rounded-[18px]">
               <Image
                 src={item.image}
                 alt={item.client}
                 fill
-                sizes="(max-width: 1024px) 100vw, 380px"
+                sizes="(max-width: 1024px) 90vw, 380px"
                 className="object-cover transition-transform duration-700 ease-out hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 rounded-[18px] bg-linear-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 rounded-[14px] bg-linear-to-t from-black/30 to-transparent lg:rounded-[18px]" />
 
               {item.website && (
                 <a
                   href={item.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[11px] font-medium text-white/70 backdrop-blur-sm transition-all duration-200 hover:border-orange/60 hover:text-orange"
+                  className="absolute bottom-3 right-3 inline-flex max-w-[calc(100%-24px)] items-center gap-1.5 truncate rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[11px] font-medium text-white/70 backdrop-blur-sm transition-all duration-200 hover:border-orange/60 hover:text-orange"
                 >
                   <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
                     <path

@@ -71,7 +71,7 @@ export default function RootLayout({
         {/* GHL form embed */}
         <Script
           src="https://link.msgsndr.com/js/form_embed.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
 
         <TopBar />

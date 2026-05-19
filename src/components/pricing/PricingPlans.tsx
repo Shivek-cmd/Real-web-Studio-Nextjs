@@ -337,7 +337,7 @@ function PlanCard({ plan, yearly, i }: { plan: Plan; yearly: boolean; i: number 
 
 /* ── Main section ────────────────────────────────────────────── */
 export default function PricingPlans() {
-  const [yearly, setYearly] = useState(false);
+  const [yearly, setYearly] = useState(true);
   const titleRef = useRef(null);
   const inView = useInView(titleRef, { once: true, margin: "-80px" });
   const tableRef = useRef(null);

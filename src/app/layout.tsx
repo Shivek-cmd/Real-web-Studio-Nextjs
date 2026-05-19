@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingChatBar from "@/components/layout/FloatingChatBar";
 import FloatingContactButtons from "@/components/layout/FloatingContactButtons";
+import RouteScrollToTop from "@/components/layout/RouteScrollToTop";
 import TopBar from "@/components/home/TopBar";
 
 const notoSans = Noto_Sans({
@@ -68,6 +69,7 @@ export default function RootLayout({
 
         <TopBar />
         <Header />
+        <RouteScrollToTop />
         <main className="flex-1">{children}</main>
         <FloatingChatBar />
         <FloatingContactButtons />

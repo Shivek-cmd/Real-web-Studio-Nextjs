@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(Remove-Item -Recurse -Force \"d:\\\\Chrishan Solution\\\\RealWebStudioNextJs\\\\realwebstudio\\\\src\\\\app\\\\case-studies\")",
+      "Bash(Remove-Item -Recurse -Force \"d:\\\\Chrishan Solution\\\\RealWebStudioNextJs\\\\realwebstudio\\\\src\\\\components\\\\case-studies\")"
+    ]
+  }
+}

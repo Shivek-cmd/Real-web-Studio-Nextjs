@@ -39,7 +39,7 @@ export default function Footer() {
             { label: "Starter — $9.99/mo",  href: "/pricing"  },
             { label: "Custom Plan",          href: "/pricing"  },
             { label: "Migrate My Website",   href: "/#switch"  },
-            { label: "Case Studies",          href: "/case-studies"},
+            { label: "Portfolio",             href: "/portfolio"   },
             { label: "Get Started",          href: "/#start"   },
           ].map((l) => (
             <Link key={l.label} href={l.href}
@@ -76,7 +76,7 @@ export default function Footer() {
           </h5>
           {[
             { label: "About Us",      href: "/about"      },
-            { label: "Case Studies",  href: "/case-studies" },
+            { label: "Portfolio",      href: "/portfolio"    },
             { label: "Reviews",       href: "/#reviews"   },
             { label: "FAQ",           href: "/#faq"       },
             { label: "Get Started",   href: "/#start"     },

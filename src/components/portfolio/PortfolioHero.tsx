@@ -7,14 +7,14 @@ const STATS = [
   { value: "72h",  label: "Average Launch Time" },
 ];
 
-export default function CaseStudiesHero() {
+export default function PortfolioHero() {
   return (
     <section className="bg-dark px-[5%] py-[80px]">
       <div className="mx-auto max-w-[1080px]">
 
         <RevealOnScroll className="mb-14 text-center">
           <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[2.5px] text-orange">
-            Case Studies
+            Portfolio
           </p>
           <h1 className="mb-4 text-[36px] font-extrabold leading-[1.15] tracking-[-0.5px] text-white sm:text-[48px]">
             Real Results for{" "}

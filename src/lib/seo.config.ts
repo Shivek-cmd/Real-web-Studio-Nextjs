@@ -131,16 +131,16 @@ export const seoConfig = {
     twitter: { card: "summary_large_image" as const },
   } satisfies Metadata,
 
-  caseStudies: {
-    title: "Case Studies | RealWebStudio — Real Results for Canadian Businesses",
+  portfolio: {
+    title: "Portfolio | RealWebStudio — Real Results for Canadian Businesses",
     description:
-      "See how RealWebStudio has helped 500+ Canadian small businesses grow online. Real case studies from trades, healthcare, legal, real estate, and more.",
-    alternates: { canonical: `${BASE_URL}/case-studies` },
+      "See how RealWebStudio has helped 500+ Canadian small businesses grow online. Real portfolio from trades, healthcare, legal, real estate, and more.",
+    alternates: { canonical: `${BASE_URL}/portfolio` },
     robots: { index: true, follow: true },
     openGraph: {
       ...sharedOpenGraphDefaults,
-      url: `${BASE_URL}/case-studies`,
-      title: "Case Studies | RealWebStudio — Real Results",
+      url: `${BASE_URL}/portfolio`,
+      title: "Portfolio | RealWebStudio — Real Results",
       description: "Real results from RealWebStudio clients across Canada — from +312% leads to #1 Google rankings.",
       images: [OG_IMAGE],
     },

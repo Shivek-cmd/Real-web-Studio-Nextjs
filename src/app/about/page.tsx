@@ -26,7 +26,7 @@ export default function AboutPage() {
         imagePosition="50% 40%"
         cta={[
           { label: "Work With Us →", href: "/contact", variant: "primary" },
-          { label: "See Case Studies", href: "/case-studies", variant: "outline" },
+          { label: "See Portfolio", href: "/portfolio", variant: "outline" },
         ]}
       />
       <OurStory />

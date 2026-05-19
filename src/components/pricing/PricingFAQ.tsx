@@ -9,6 +9,18 @@ const FAQS = [
     a: "Correct — zero setup fees, ever. You pay only the monthly plan price from day one. No onboarding charges, no domain fees, nothing hidden.",
   },
   {
+    q: "How long does it take to go live?",
+    a: "The Basic plan typically launches in 1–2 weeks once we have your content. The Growth plan takes 3–4 weeks due to the additional e-commerce setup, marketing integrations, and CRM configuration. Custom timelines are scoped on a per-project basis.",
+  },
+  {
+    q: "What's included in the Growth plan's digital marketing?",
+    a: "Growth is a complete done-for-you marketing service alongside your website. It includes social media management (3 posts per week), Google & Meta ad campaigns, campaign performance tracking and reporting, advanced local SEO, Google Review automation, lead generation setup, and full CRM setup and integration.",
+  },
+  {
+    q: "How does the yearly billing work?",
+    a: "The Basic plan offers annual billing at $9.99/month, charged as $120/year — saving you $180 compared to monthly. The Growth plan is monthly only at $249.99/month, giving you full flexibility with no long-term commitment.",
+  },
+  {
     q: "Can I cancel anytime?",
     a: "Yes. There are no lock-in contracts. Cancel with 30 days' notice and we'll hand over all your files — no questions, no penalties.",
   },
@@ -17,16 +29,12 @@ const FAQS = [
     a: "Text changes, image swaps, new contact details, adding team members, updating hours — anything you'd normally need to keep your site current. Bigger structural changes are quoted separately.",
   },
   {
-    q: "How does free migration work?",
-    a: "If you have an existing website, we copy all your content, pages, and images to your new RealWebStudio site at no charge. We handle the domain transfer and ensure zero downtime during the switch.",
+    q: "Does the Basic plan include an online store?",
+    a: "No — Basic is focused on your core web presence: up to 5 pages (Home, About, Services, Contact) with a contact form. If you need a store, the Growth plan includes a basic e-commerce setup. For a fully custom store with advanced integrations, the Custom plan is the right fit.",
   },
   {
-    q: "What's the difference between Basic SEO and Advanced Local SEO?",
-    a: "Basic SEO covers meta tags, page titles, and Google indexing. Advanced Local SEO adds Google Business Profile optimization, local citation building, keyword targeting for your city, and monthly rank tracking — everything you need to rank above competitors nearby.",
-  },
-  {
-    q: "What counts as a 'custom' plan — when do I need it?",
-    a: "If you need an online store, booking/appointment system, customer portal, or any third-party API integration, Custom is the right fit. Book a free call and we'll scope it out together.",
+    q: "What is the AI chatbot available on the Custom plan?",
+    a: "We implement an AI-powered chatbot through bizbull.ai that handles customer inquiries, qualifies leads, and automates responses 24/7 — fully customized to your business. It's available exclusively on the Custom plan.",
   },
 ];
 

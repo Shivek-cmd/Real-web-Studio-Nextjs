@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { seoConfig } from "@/lib/seo.config";
 import PageHero from "@/components/ui/PageHero";
-import CaseStudiesGrid from "@/components/case-studies/CaseStudiesGrid";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 
-export const metadata: Metadata = seoConfig.caseStudies;
+export const metadata: Metadata = seoConfig.portfolio;
 
-export default function CaseStudiesPage() {
+export default function PortfolioPage() {
   return (
     <>
       <PageHero
-        label="Case Studies"
+        label="Portfolio"
         title={
           <>
             Real Results for{" "}
@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
         imageAlt="Canadian business team celebrating growth results"
         imagePosition="50% 35%"
       />
-      <CaseStudiesGrid />
+      <PortfolioGrid />
     </>
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -7,6 +9,25 @@ const TRUST_BADGES = [
   { icon: "⚡", text: "Live in 72 Hours" },
   { icon: "🔒", text: "No Lock-in Contracts" },
   { icon: "🇨🇦", text: "Canadian Business" },
+];
+
+const HERO_IMAGES = [
+  {
+    src: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    alt: "Canadian business team planning a website launch",
+  },
+  {
+    src: "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    alt: "Designer and developer working on a custom website",
+  },
+  {
+    src: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    alt: "Small business team reviewing digital growth plans",
+  },
+  {
+    src: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    alt: "Business owners discussing website strategy",
+  },
 ];
 
 type BezierEase = [number, number, number, number];
@@ -21,21 +42,43 @@ function fu(i: number) {
 }
 
 export default function Hero() {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % HERO_IMAGES.length);
+    }, 5500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="start"
-      className="relative overflow-hidden bg-white px-[5%] py-[72px] lg:py-[96px]"
+      className="relative overflow-hidden bg-dark px-[5%] py-[72px] lg:py-[96px]"
     >
-      {/* Subtle background glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-orange-light opacity-50 blur-[120px]"
-      />
+      {HERO_IMAGES.map((image, index) => (
+        <Image
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          fill
+          priority={index === 0}
+          sizes="100vw"
+          className={`object-cover transition-opacity duration-1000 ease-out ${
+            activeImage === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
 
-      <div className="relative mx-auto grid max-w-[1080px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="absolute inset-0 bg-dark/78" />
+      <div className="absolute inset-0 bg-linear-to-r from-dark/95 via-dark/74 to-dark/44" />
+      <div className="absolute inset-0 bg-linear-to-t from-dark/72 via-transparent to-dark/28" />
+
+      <div className="relative mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:gap-24 xl:gap-32">
         <div
           aria-hidden
-          className="absolute bottom-6 left-1/2 top-6 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-site-border to-transparent lg:block"
+          className="absolute bottom-6 left-[52%] top-6 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/14 to-transparent lg:block"
         />
 
         {/* ── Left: Value Proposition ───────────────────────── */}
@@ -43,7 +86,7 @@ export default function Hero() {
           {/* Eyebrow pill */}
           <motion.div
             {...fu(0)}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-mid bg-orange-light px-4 py-1.5 text-[13px] font-semibold text-orange"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange/40 bg-orange/15 px-4 py-1.5 text-[13px] font-semibold text-orange backdrop-blur-sm"
           >
             <span className="h-2 w-2 animate-pulse rounded-full bg-orange" />
            Proudly Canadian
@@ -52,7 +95,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             {...fu(1)}
-            className="mb-5 text-[38px] font-extrabold leading-[1.15] tracking-[-0.5px] text-site-text sm:text-[44px] lg:text-[52px]"
+            className="mb-5 text-[38px] font-extrabold leading-[1.15] tracking-[-0.5px] text-white sm:text-[44px] lg:text-[52px]"
           >
            Need a Website?{" "}
             <span className="text-orange">Get one for just $9.99/mo</span>
@@ -63,7 +106,7 @@ export default function Hero() {
           {/* Sub-copy */}
           <motion.p
             {...fu(2)}
-            className="mb-8 max-w-[480px] text-[17px] leading-[1.7] text-gray"
+            className="mb-8 max-w-[480px] text-[17px] leading-[1.7] text-white/76"
           >
             We build, host, and maintain your website so you can focus on running
             your business. No technical skills needed. No surprise fees. Just
@@ -84,7 +127,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/#portfolio"
-              className="rounded-full border border-site-border px-7 py-[14px] text-[15px] font-semibold text-site-text transition-all duration-200 hover:border-orange hover:text-orange"
+              className="rounded-full border border-white/32 px-7 py-[14px] text-[15px] font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-orange hover:text-orange"
             >
               View Portfolio
             </Link>
@@ -95,7 +138,7 @@ export default function Hero() {
             {TRUST_BADGES.map((b) => (
               <div
                 key={b.text}
-                className="flex items-center gap-1.5 text-[13px] font-medium text-gray"
+                className="flex items-center gap-1.5 text-[13px] font-medium text-white/72"
               >
                 <span>{b.icon}</span>
                 {b.text}
@@ -114,10 +157,10 @@ export default function Hero() {
                 />
               ))}
             </div>
-            <div className="text-[13px] text-gray">
+            <div className="text-[13px] text-white/72">
               <span className="font-bold text-orange">★★★★★</span>{" "}
-              <span className="font-semibold text-site-text">4.9</span> · Trusted by{" "}
-              <span className="font-semibold text-site-text">500+ Canadian businesses</span>
+              <span className="font-semibold text-white">4.9</span> · Trusted by{" "}
+              <span className="font-semibold text-white">500+ Canadian businesses</span>
             </div>
           </motion.div>
         </div>
@@ -128,32 +171,46 @@ export default function Hero() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
-          className="relative rounded-[14px] border border-site-border bg-gray-light p-1 shadow-card"
+          className="relative overflow-hidden rounded-[16px] border border-site-border bg-white p-10 shadow-large lg:ml-4"
         >
           {/* Form badge */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-orange px-4 py-1.5 text-[12px] font-bold text-white shadow-orange">
             Free Setup — No Credit Card Needed
           </div>
 
-          <div className="overflow-hidden rounded-[12px] bg-white p-10">
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/form/ZgZvuabNtIRtYTaCsSWy"
-              id="inline-ZgZvuabNtIRtYTaCsSWy"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-activation-type="alwaysActivated"
-              data-deactivation-type="neverDeactivate"
-              data-form-name="Get Started"
-              data-height="504"
-              data-layout-iframe-id="inline-cDGtShyVjnJmpPW9bWtH"
-              data-form-id="cDGtShyVjnJmpPW9bWtH"
-              title="Get Started — RealWebStudio"
-              className="min-h-[504px] w-full border-0"
-              loading="lazy"
-            />
-          </div>
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/ZgZvuabNtIRtYTaCsSWy"
+            id="inline-ZgZvuabNtIRtYTaCsSWy"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-activation-type="alwaysActivated"
+            data-deactivation-type="neverDeactivate"
+            data-form-name="Get Started"
+            data-height="504"
+            data-layout-iframe-id="inline-cDGtShyVjnJmpPW9bWtH"
+            data-form-id="cDGtShyVjnJmpPW9bWtH"
+            title="Get Started — RealWebStudio"
+            className="min-h-[504px] w-full border-0"
+            loading="lazy"
+          />
         </motion.div>
 
+      </div>
+
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
+        {HERO_IMAGES.map((image, index) => (
+          <button
+            key={image.src}
+            type="button"
+            aria-label={`Show hero image ${index + 1}`}
+            onClick={() => setActiveImage(index)}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              activeImage === index
+                ? "w-8 bg-orange"
+                : "w-2.5 bg-white/45 hover:bg-white/75"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

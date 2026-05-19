@@ -30,6 +30,14 @@ const HERO_IMAGES = [
   },
 ];
 
+const HERO_POINTS = [
+  "We build your website for you - ready in 3-7 days",
+  "FREE Hosting - nothing extra to pay",
+  "Need changes? We handle it - or use our simple CMS yourself anytime",
+  "You own your domain - always. It's yours, forever. No lock-in.",
+  "No skills needed. No time wasted. We do everything for you.",
+];
+
 type BezierEase = [number, number, number, number];
 const EASE: BezierEase = [0.22, 1, 0.36, 1];
 
@@ -101,17 +109,18 @@ export default function Hero() {
             <span className="block whitespace-nowrap">Need a Website?</span>
             <span className="block text-orange">Get one for just $9.99/mo</span>
           </motion.h1>
-
-          {/* Sub-copy */}
-          <motion.p
+          {/* Value points */}
+          <motion.ul
             {...fu(2)}
-            className="mb-8 max-w-[480px] text-[17px] leading-[1.7] text-white/76"
+            className="mb-8 max-w-[560px] space-y-3 text-[16px] leading-[1.55] text-white/82 sm:text-[17px]"
           >
-            We build, host, and maintain your website so you can focus on running
-            your business. No technical skills needed. No surprise fees. Just
-            results — proudly serving Edmonton, Calgary, Vancouver, Toronto, and
-            all of Canada.
-          </motion.p>
+            {HERO_POINTS.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span className="mt-[0.6em] h-2 w-2 flex-shrink-0 rounded-full bg-orange shadow-orange" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </motion.ul>
 
           {/* CTA Buttons */}
           <motion.div

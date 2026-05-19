@@ -6,12 +6,23 @@ import Values from "@/components/about/Values";
 import TeamSection from "@/components/about/TeamSection";
 import AboutStats from "@/components/about/AboutStats";
 import AboutCTA from "@/components/about/AboutCTA";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.about;
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        id="about-page-schema"
+        data={webPageSchema({
+          name: "About Us",
+          description:
+            "Learn about RealWebStudio, an Edmonton web design agency serving Canadian small businesses.",
+          path: "/about",
+        })}
+      />
       <PageHero
         label="About Us"
         title={

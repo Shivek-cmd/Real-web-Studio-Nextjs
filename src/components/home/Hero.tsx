@@ -43,6 +43,7 @@ function fu(i: number) {
 
 export default function Hero() {
   const [activeImage, setActiveImage] = useState(0);
+  const [formLoaded, setFormLoaded] = useState(false);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -71,11 +72,11 @@ export default function Hero() {
         />
       ))}
 
-      <div className="absolute inset-0 bg-dark/78" />
-      <div className="absolute inset-0 bg-linear-to-r from-dark/95 via-dark/74 to-dark/44" />
-      <div className="absolute inset-0 bg-linear-to-t from-dark/72 via-transparent to-dark/28" />
+     <div className="absolute inset-0 bg-dark/55" />
+<div className="absolute inset-0 bg-linear-to-r from-dark/75 via-dark/50 to-dark/25" />
+<div className="absolute inset-0 bg-linear-to-t from-dark/50 via-transparent to-dark/15" />
 
-      <div className="relative mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:gap-24 xl:gap-32">
+      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:gap-24 xl:gap-32">
         <div
           aria-hidden
           className="absolute bottom-6 left-[52%] top-6 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/14 to-transparent lg:block"
@@ -95,12 +96,10 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             {...fu(1)}
-            className="mb-5 text-[38px] font-extrabold leading-[1.15] tracking-[-0.5px] text-white sm:text-[44px] lg:text-[52px]"
+            className="mb-4 text-[38px] font-extrabold leading-[1.15] tracking-[-0.5px] text-white sm:text-[44px] lg:text-[52px]"
           >
-           Need a Website?{" "}
-            <span className="text-orange">Get one for just $9.99/mo</span>
-            <br />
-            
+            <span className="block whitespace-nowrap">Need a Website?</span>
+            <span className="block text-orange">Get one for just $9.99/mo</span>
           </motion.h1>
 
           {/* Sub-copy */}
@@ -171,12 +170,18 @@ export default function Hero() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
-          className="relative overflow-hidden rounded-[16px] border border-site-border bg-white p-10 shadow-large lg:ml-4"
+          className="relative min-h-[610px] rounded-[16px] border border-site-border bg-white p-10 shadow-large lg:ml-4"
         >
           {/* Form badge */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-orange px-4 py-1.5 text-[12px] font-bold text-white shadow-orange">
             Free Setup — No Credit Card Needed
           </div>
+
+          {!formLoaded && (
+            <div className="absolute inset-10 flex min-h-[530px] items-center justify-center rounded-[10px] bg-white">
+              <div className="h-10 w-10 animate-spin rounded-full border-4 border-orange/20 border-t-orange" />
+            </div>
+          )}
 
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/ZgZvuabNtIRtYTaCsSWy"
@@ -190,8 +195,10 @@ export default function Hero() {
             data-layout-iframe-id="inline-cDGtShyVjnJmpPW9bWtH"
             data-form-id="cDGtShyVjnJmpPW9bWtH"
             title="Get Started — RealWebStudio"
-            className="min-h-[504px] w-full border-0"
+            className="h-[530px] min-h-[530px] w-full border-0"
             loading="lazy"
+            scrolling="no"
+            onLoad={() => setFormLoaded(true)}
           />
         </motion.div>
 

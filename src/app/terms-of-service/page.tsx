@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { seoConfig } from "@/lib/seo.config";
 import PageHero from "@/components/ui/PageHero";
 import LegalLayout from "@/components/legal/LegalLayout";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.termsOfService;
 
@@ -36,6 +38,15 @@ function SectionHeading({ id, title }: { id: string; title: string }) {
 export default function TermsOfServicePage() {
   return (
     <>
+      <JsonLd
+        id="terms-of-service-schema"
+        data={webPageSchema({
+          name: "Terms of Service",
+          description:
+            "RealWebStudio service terms, payment policies, client responsibilities, and cancellation rules.",
+          path: "/terms-of-service",
+        })}
+      />
       <PageHero
         label="Legal"
         title="Terms of Service"

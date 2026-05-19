@@ -14,8 +14,8 @@ const TABS = [
     ),
     title: "Too Expensive",
     body: "Agencies charge $3,000–$10,000 upfront. That's money most small businesses simply don't have sitting around — and the ROI never shows up.",
-    image: "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt: "Small business owner stressed about high website costs",
+    image: "https://images.pexels.com/photos/5900134/pexels-photo-5900134.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "Small business owner looking stressed at an expensive invoice next to her laptop",
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const TABS = [
     ),
     title: "Takes Months",
     body: "Traditional web projects drag on for 2–4 months. Your competitors are already getting customers while you're still waiting on revision round three.",
-    image: "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt: "Business owner frustrated waiting for website to be built",
+    image: "https://images.pexels.com/photos/3760811/pexels-photo-3760811.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "Frustrated business owner resting his head on his desk waiting for his website to launch",
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const TABS = [
     ),
     title: "Too Complicated",
     body: "WordPress, plugins, hosting, domains, SSL, updates — it's a full-time job just to keep the lights on. You started a business, not a tech department.",
-    image: "https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt: "Business owner overwhelmed by website technology complexity",
+    image: "https://images.pexels.com/photos/4226215/pexels-photo-4226215.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "Woman covering her face in frustration in front of a laptop, overwhelmed by website technology",
   },
   {
     icon: (
@@ -52,8 +52,8 @@ const TABS = [
     ),
     title: "Abandoned After Launch",
     body: "Most agencies disappear after they cash your cheque. Updates, bugs, backups — suddenly your problem. Your site breaks and no one picks up the phone.",
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt: "Business owner left without website support after launch",
+    image: "https://images.pexels.com/photos/5239941/pexels-photo-5239941.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "Frustrated business owner leaning over her desk with phone and laptop, unable to reach web agency for support",
   },
 ];
 

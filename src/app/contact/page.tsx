@@ -4,12 +4,23 @@ import PageHero from "@/components/ui/PageHero";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactMap from "@/components/contact/ContactMap";
+import JsonLd from "@/components/seo/JsonLd";
+import { webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.contact;
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        id="contact-page-schema"
+        data={webPageSchema({
+          name: "Contact Us",
+          description:
+            "Contact RealWebStudio by phone, WhatsApp, email, or discovery call.",
+          path: "/contact",
+        })}
+      />
       <PageHero
         label="Contact Us"
         title={

@@ -18,7 +18,7 @@ const POSTS = [
     readTime: "5 min read",
     image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Web design for Canadian small businesses in 2025",
-    href: "/blog/canadian-small-business-website-2025",
+    href: "/blog/canadian-small-business-website-2026",
   },
   {
     id: "post-2",
@@ -46,7 +46,7 @@ const POSTS = [
     readTime: "6 min read",
     image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "AI lead generation for Edmonton trades businesses",
-    href: "/blog/edmonton-trades-ai-leads-2025",
+    href: "/blog/edmonton-trades-ai-leads-2026",
   },
 ];
 

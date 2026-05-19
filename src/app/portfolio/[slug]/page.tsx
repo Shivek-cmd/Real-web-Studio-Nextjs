@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
 import { getPortfolioItem, portfolioItems } from "@/lib/portfolio";
+import { portfolioCaseStudySchema } from "@/lib/schema";
+import { absoluteUrl, SITE_NAME } from "@/lib/site";
 
 type PortfolioDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -21,20 +24,23 @@ export async function generateMetadata({
   if (!item) {
     return {
       title: "Case Study Not Found | RealWebStudio",
+      robots: { index: false, follow: false },
     };
   }
 
   return {
     title: `${item.client} Case Study | RealWebStudio`,
     description: item.description,
-    alternates: {
-      canonical: `https://realwebstudio.com/portfolio/${item.id}`,
-    },
+    alternates: { canonical: absoluteUrl(`/portfolio/${item.id}`) },
+    robots: { index: true, follow: true },
+    keywords: item.tags,
     openGraph: {
       title: `${item.client} Case Study | RealWebStudio`,
       description: item.description,
-      url: `https://realwebstudio.com/portfolio/${item.id}`,
-      siteName: "RealWebStudio",
+      url: absoluteUrl(`/portfolio/${item.id}`),
+      siteName: SITE_NAME,
+      locale: "en_CA",
+      type: "article",
       images: [
         {
           url: item.image,
@@ -43,6 +49,12 @@ export async function generateMetadata({
           alt: item.heroAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${item.client} Case Study | RealWebStudio`,
+      description: item.description,
+      images: [item.image],
     },
   };
 }
@@ -59,6 +71,7 @@ export default async function PortfolioDetailPage({
 
   return (
     <article className="bg-white text-site-text">
+      <JsonLd id="portfolio-case-study-schema" data={portfolioCaseStudySchema(item)} />
       <section className="border-b border-site-border px-side-gap py-14 lg:py-18">
         <div className="mx-auto max-w-270">
           <Link

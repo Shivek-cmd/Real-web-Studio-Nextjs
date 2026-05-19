@@ -21,6 +21,7 @@ export type BlogPost = {
   authorAvatar: string;
   date: string;
   sortDate: string;
+  updatedDate?: string;
   readTime: string;
   image: string;
   heroImage: string;
@@ -34,7 +35,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     id: "post-1",
-    slug: "canadian-small-business-website-2025",
+    slug: "canadian-small-business-website-2026",
     category: "Web Design",
     categoryColor: "bg-orange",
     title: "Why Every Canadian Small Business Needs a Website in 2026",
@@ -54,7 +55,7 @@ export const blogPosts: BlogPost[] = [
     heroImage:
       "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600",
     alt: "Web design planning for Canadian small businesses",
-    href: "/blog/canadian-small-business-website-2025",
+    href: "/blog/canadian-small-business-website-2026",
     tags: ["Small Business", "Website Strategy", "Canada"],
     intro:
       "A website is no longer a digital brochure. For Canadian small businesses, it is the place where trust is built, questions are answered, and serious buyers decide whether to call you or keep scrolling.",
@@ -200,7 +201,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "post-3",
-    slug: "edmonton-trades-ai-leads-2025",
+    slug: "edmonton-trades-ai-leads-2026",
     category: "AI & Growth",
     categoryColor: "bg-purple",
     title: "How Edmonton Trades Businesses Are Getting More Leads With AI",
@@ -220,7 +221,7 @@ export const blogPosts: BlogPost[] = [
     heroImage:
       "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600",
     alt: "AI lead generation meeting for trades businesses",
-    href: "/blog/edmonton-trades-ai-leads-2025",
+    href: "/blog/edmonton-trades-ai-leads-2026",
     tags: ["AI Automation", "Trades", "Edmonton"],
     intro:
       "AI is not just for big tech companies. For Edmonton trades businesses, the practical win is simple: respond faster, qualify better, and stop losing good leads after hours.",

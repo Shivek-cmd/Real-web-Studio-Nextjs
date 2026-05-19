@@ -15,12 +15,12 @@ export default function MarqueeStrip() {
   const doubled = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="overflow-hidden border-y border-site-border bg-gray-light py-[14px]">
+    <div className="overflow-hidden border-y border-white/10 bg-dark py-[14px]">
       <div className="animate-marquee flex w-max gap-12 whitespace-nowrap">
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[1px] text-gray"
+            className="flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[1px] text-white/65"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-orange" />
             {item}

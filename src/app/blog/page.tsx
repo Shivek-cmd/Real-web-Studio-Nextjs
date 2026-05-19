@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { seoConfig } from "@/lib/seo.config";
 import PageHero from "@/components/ui/PageHero";
 import BlogListing from "@/components/blog/BlogListing";
+import JsonLd from "@/components/seo/JsonLd";
+import { blogListingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.blog;
 
 export default function BlogPage() {
   return (
     <>
+      <JsonLd id="blog-listing-schema" data={blogListingSchema()} />
       <PageHero
         label="Insights"
         title={

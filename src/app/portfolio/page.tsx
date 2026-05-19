@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { seoConfig } from "@/lib/seo.config";
 import PageHero from "@/components/ui/PageHero";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+import JsonLd from "@/components/seo/JsonLd";
+import { portfolioListingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.portfolio;
 
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd id="portfolio-listing-schema" data={portfolioListingSchema()} />
       <PageHero
         label="Portfolio"
         title={

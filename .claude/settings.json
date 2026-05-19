@@ -6,7 +6,9 @@
       "WebFetch(domain:protrucktraining.ca)",
       "WebFetch(domain:jerhrgroup.com)",
       "WebFetch(domain:optiwaysimmigration.com)",
-      "WebFetch(domain:oilcityreadymix.com)"
+      "WebFetch(domain:oilcityreadymix.com)",
+      "WebSearch",
+      "WebFetch(domain:images.pexels.com)"
     ]
   }
 }

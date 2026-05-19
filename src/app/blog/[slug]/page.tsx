@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogTableOfContents from "@/components/blog/BlogTableOfContents";
+import JsonLd from "@/components/seo/JsonLd";
 import { blogPosts, getBlogPost, getRelatedPosts, type BlogPost } from "@/lib/blog";
-
-const BASE_URL = "https://realwebstudio.com";
+import { blogPostSchema } from "@/lib/schema";
+import { absoluteUrl, SITE_NAME } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -29,15 +30,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.seoTitle} | RealWebStudio`,
     description: post.seoDescription,
-    alternates: { canonical: `${BASE_URL}${post.href}` },
+    alternates: { canonical: absoluteUrl(post.href) },
     robots: { index: true, follow: true },
+    authors: [{ name: post.author }],
+    category: post.category,
+    keywords: post.tags,
     openGraph: {
-      siteName: "RealWebStudio",
+      siteName: SITE_NAME,
       locale: "en_CA",
       type: "article",
-      url: `${BASE_URL}${post.href}`,
+      url: absoluteUrl(post.href),
       title: post.seoTitle,
       description: post.seoDescription,
+      publishedTime: post.sortDate,
+      modifiedTime: post.updatedDate ?? post.sortDate,
+      authors: [post.author],
+      tags: post.tags,
       images: [
         {
           url: post.heroImage,
@@ -143,12 +151,13 @@ export default async function BlogDetailPage({ params }: Props) {
   }
 
   const relatedPosts = getRelatedPosts(post);
-  const articleUrl = `${BASE_URL}${post.href}`;
+  const articleUrl = absoluteUrl(post.href);
   const encodedUrl = encodeURIComponent(articleUrl);
   const encodedTitle = encodeURIComponent(post.title);
 
   return (
     <>
+      <JsonLd id="blog-post-schema" data={blogPostSchema(post)} />
       <section className="relative min-h-[520px] overflow-hidden">
         <Image
           src={post.heroImage}
@@ -170,9 +179,9 @@ export default async function BlogDetailPage({ params }: Props) {
               >
                 {post.category}
               </span>
-              <span className="text-[12px] font-semibold text-white/55">
+              <time dateTime={post.sortDate} className="text-[12px] font-semibold text-white/55">
                 Published {post.date}
-              </span>
+              </time>
             </div>
 
             <h1 className="text-[38px] font-extrabold leading-[1.12] tracking-[-0.5px] text-white sm:text-[54px]">
@@ -197,7 +206,7 @@ export default async function BlogDetailPage({ params }: Props) {
               <span className="text-white/24">.</span>
               <span>{post.readTime}</span>
               <span className="text-white/24">.</span>
-              <span>{post.date}</span>
+              <time dateTime={post.sortDate}>{post.date}</time>
             </div>
           </div>
         </div>
@@ -212,7 +221,7 @@ export default async function BlogDetailPage({ params }: Props) {
             <span className="text-site-border">/</span>
             <span>{post.category}</span>
             <span className="text-site-border">.</span>
-            <span>{post.date}</span>
+            <time dateTime={post.sortDate}>{post.date}</time>
             <span className="text-site-border">.</span>
             <span>{post.readTime}</span>
           </div>
@@ -282,7 +291,7 @@ export default async function BlogDetailPage({ params }: Props) {
                       {post.author}
                     </p>
                     <p className="mt-1 text-[12.5px] font-semibold text-gray">
-                      Published {post.date}
+                      Published <time dateTime={post.sortDate}>{post.date}</time>
                       <span className="mx-1.5 text-site-border">.</span>
                       {post.readTime}
                     </p>

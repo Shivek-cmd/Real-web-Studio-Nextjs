@@ -8,6 +8,9 @@ import FloatingChatBar from "@/components/layout/FloatingChatBar";
 import FloatingContactButtons from "@/components/layout/FloatingContactButtons";
 import RouteScrollToTop from "@/components/layout/RouteScrollToTop";
 import TopBar from "@/components/home/TopBar";
+import JsonLd from "@/components/seo/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { SITE_URL } from "@/lib/site";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -18,19 +21,23 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   // metadataBase makes all relative OG/Twitter image URLs absolute
-  metadataBase: new URL("https://realwebstudio.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "RealWebStudio | Custom Websites for Canadian Small Businesses",
-    template: "%s | RealWebStudio",
+    template: "%s",
   },
   description: "Custom Websites for Canadian Small Businesses",
+  alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/logo.png", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png" }],
+    apple: [{ url: "/logo.png", type: "image/png" }],
   },
 };
 
@@ -68,6 +75,7 @@ export default function RootLayout({
         />
 
         <TopBar />
+        <JsonLd id="site-identity-schema" data={[organizationSchema(), websiteSchema()]} />
         <Header />
         <RouteScrollToTop />
         <main className="flex-1">{children}</main>

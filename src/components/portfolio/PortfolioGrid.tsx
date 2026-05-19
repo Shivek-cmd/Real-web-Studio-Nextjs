@@ -30,7 +30,7 @@ function PortfolioCard({
   const extraCount = item.tags.length - 4;
 
   return (
-    <div ref={containerRef} className="h-screen">
+    <div ref={containerRef} className="h-[78vh] min-h-[620px]">
       <motion.div
         style={{
           scale,
@@ -40,7 +40,7 @@ function PortfolioCard({
           top: 0,
           zIndex: index + 1,
         }}
-        className="relative flex h-screen items-center overflow-hidden bg-white"
+        className="relative flex h-[86vh] min-h-[620px] items-center overflow-hidden bg-white"
       >
         <div className="absolute inset-x-0 top-0 h-px bg-site-border" />
 
@@ -100,7 +100,7 @@ function PortfolioCard({
                   href={`/portfolio/${item.id}`}
                   className="rounded-full bg-orange px-6 py-3 text-[13px] font-bold text-white shadow-orange transition-all duration-200 hover:-translate-y-px hover:bg-orange-dark"
                 >
-                  View Case Study
+                  View Work
                 </Link>
                 <Link
                   href="/contact"

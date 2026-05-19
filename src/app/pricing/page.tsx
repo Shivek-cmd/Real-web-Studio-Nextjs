@@ -4,12 +4,15 @@ import PageHero from "@/components/ui/PageHero";
 import PricingPlans from "@/components/pricing/PricingPlans";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
 import FinalCTA from "@/components/home/FinalCTA";
+import JsonLd from "@/components/seo/JsonLd";
+import { pricingPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.pricing;
 
 export default function PricingPage() {
   return (
     <>
+      <JsonLd id="pricing-page-schema" data={pricingPageSchema()} />
       <PageHero
         label="Pricing"
         title={

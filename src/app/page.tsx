@@ -12,12 +12,15 @@ import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import BlogSection from "@/components/home/BlogSection";
 import FinalCTA from "@/components/home/FinalCTA";
+import JsonLd from "@/components/seo/JsonLd";
+import { homePageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = seoConfig.home;
 
 export default function Home() {
   return (
     <>
+      <JsonLd id="home-page-schema" data={homePageSchema()} />
       <Hero />
       <MarqueeStrip />
       <StatsStrip />

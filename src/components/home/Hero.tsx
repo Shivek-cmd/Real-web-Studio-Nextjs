@@ -51,7 +51,6 @@ function fu(i: number) {
 
 export default function Hero() {
   const [activeImage, setActiveImage] = useState(0);
-  const [formLoaded, setFormLoaded] = useState(false);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -186,12 +185,6 @@ export default function Hero() {
             Free Setup — No Credit Card Needed
           </div>
 
-          {!formLoaded && (
-            <div className="absolute inset-10 flex min-h-[530px] items-center justify-center rounded-[10px] bg-white">
-              <div className="h-10 w-10 animate-spin rounded-full border-4 border-orange/20 border-t-orange" />
-            </div>
-          )}
-
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/ZgZvuabNtIRtYTaCsSWy"
             id="inline-ZgZvuabNtIRtYTaCsSWy"
@@ -207,7 +200,6 @@ export default function Hero() {
             className="h-[530px] min-h-[530px] w-full border-0"
             loading="lazy"
             scrolling="no"
-            onLoad={() => setFormLoaded(true)}
           />
         </motion.div>
 

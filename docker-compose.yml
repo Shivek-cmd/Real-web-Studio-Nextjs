@@ -1,0 +1,33 @@
+services:
+  realwebstudio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: realwebstudio-next:latest
+    container_name: realwebstudio-next
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      HOSTNAME: 0.0.0.0
+      PORT: "3000"
+    expose:
+      - "3000"
+    networks:
+      - traefik-proxy
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "n8n-vat5_traefik-proxy"
+      traefik.http.routers.realwebstudio.entrypoints: "websecure"
+      traefik.http.routers.realwebstudio.rule: "Host(`realwebstudio.com`) || Host(`www.realwebstudio.com`)"
+      traefik.http.routers.realwebstudio.tls.certresolver: "letsencrypt"
+      traefik.http.routers.realwebstudio.middlewares: "realwebstudio-www-redirect"
+      traefik.http.middlewares.realwebstudio-www-redirect.redirectregex.regex: "^https://www\\.realwebstudio\\.com/(.*)"
+      traefik.http.middlewares.realwebstudio-www-redirect.redirectregex.replacement: "https://realwebstudio.com/$${1}"
+      traefik.http.middlewares.realwebstudio-www-redirect.redirectregex.permanent: "true"
+      traefik.http.services.realwebstudio.loadbalancer.server.port: "3000"
+
+networks:
+  traefik-proxy:
+    external: true
+    name: n8n-vat5_traefik-proxy

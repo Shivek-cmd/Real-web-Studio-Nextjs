@@ -108,9 +108,20 @@ export default function Hero() {
             <span className="block whitespace-nowrap">Need a Website?</span>
             <span className="block text-orange">Get one for just $9.99/mo</span>
           </motion.h1>
+
+          <motion.p
+            {...fu(2)}
+            className="mb-5 max-w-[560px] text-[18px] font-semibold leading-[1.55] text-white/88"
+          >
+            We <strong className="text-orange">build</strong> it. We{" "}
+            <strong className="text-orange">host</strong> it. We{" "}
+            <strong className="text-orange">maintain</strong> it. You just run
+            your business.
+          </motion.p>
+
           {/* Value points */}
           <motion.ul
-            {...fu(2)}
+            {...fu(3)}
             className="mb-8 max-w-[560px] space-y-3 text-[16px] leading-[1.55] text-white/82 sm:text-[17px]"
           >
             {HERO_POINTS.map((point) => (
@@ -123,7 +134,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            {...fu(3)}
+            {...fu(4)}
             className="mb-8 flex flex-wrap items-center gap-3"
           >
             <Link
@@ -141,7 +152,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Trust badges */}
-          <motion.div {...fu(4)} className="flex flex-wrap gap-4">
+          <motion.div {...fu(5)} className="flex flex-wrap gap-4">
             {TRUST_BADGES.map((b) => (
               <div
                 key={b.text}
@@ -154,7 +165,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.div {...fu(5)} className="mt-6 flex items-center gap-3">
+          <motion.div {...fu(6)} className="mt-6 flex items-center gap-3">
             <div className="flex -space-x-2">
               {["#FF6B35", "#10B981", "#6C63FF", "#0ea5e9"].map((c) => (
                 <div

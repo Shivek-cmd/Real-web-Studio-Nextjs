@@ -6,23 +6,27 @@ const TEAM = [
     name: "Sandeep Taur",
     title: "Founder & CEO",
     bio: "The driving force behind RealWebStudio, Sandeep built the company on one belief — every Canadian small business deserves a website that actually works. With a background in digital marketing and web strategy, he leads the team with a results-first mindset.",
-    image:
-      "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/about/sandeep.png",
   },
   {
-    name: "Team Member",
-    title: "Lead Web Designer",
-    bio: "Crafting clean, conversion-focused designs that make small businesses look their best online. From first wireframe to final pixel, every layout is built to turn visitors into customers.",
-    image:
-      "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Shivek Soni",
+    title: "Technical Lead",
+    bio: "Shivek leads the technical side of RealWebStudio, turning strategy and design into fast, secure, and reliable websites. He focuses on clean implementation, performance, and systems that are easy for clients to manage after launch.",
+    image: "/about/shiveksoni.png",
   },
   {
-    name: "Team Member",
-    title: "SEO & Growth Strategist",
-    bio: "Specializing in local SEO and lead generation for Canadian markets. From Google Business profiles to on-page optimization, they make sure our clients get found by the right people at the right time.",
-    image:
-      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Naveen Patel",
+    title: "Performance Marketing and SEO",
+    bio: "Naveen helps RealWebStudio clients turn visibility into measurable growth. He focuses on local SEO, paid campaigns, analytics, and conversion strategy so small businesses can attract the right traffic and turn it into qualified leads.",
+    image: "/about/Naveen.png",
   },
+];
+
+const TEAM_STATS = [
+  { value: "50+", label: "Delivery team members" },
+  { value: "500+", label: "Businesses supported" },
+  { value: "10+", label: "Industries served" },
+  { value: "Canada-wide", label: "Project delivery" },
 ];
 
 export default function TeamSection() {
@@ -36,10 +40,12 @@ export default function TeamSection() {
             Leadership
           </p>
           <h2 className="mb-4 text-[30px] font-extrabold leading-[1.2] tracking-[-0.3px] text-site-text sm:text-[38px]">
-            Meet Our Team
+            Meet Our Leadership Team
           </h2>
-          <p className="mx-auto max-w-[480px] text-[16px] leading-[1.7] text-gray">
-            Experienced professionals united by a shared commitment to client success.
+          <p className="mx-auto max-w-[680px] text-[16px] leading-[1.7] text-gray">
+            RealWebStudio is led by a focused core team and supported by a 50+
+            member network of designers, developers, SEO specialists, marketers,
+            content writers, QA testers, and support professionals.
           </p>
         </RevealOnScroll>
 
@@ -73,6 +79,21 @@ export default function TeamSection() {
             </RevealOnScroll>
           ))}
         </div>
+
+        <RevealOnScroll className="mt-14 rounded-[16px] border border-site-border bg-white p-5 shadow-card sm:p-6">
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {TEAM_STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-[26px] font-extrabold leading-none text-orange sm:text-[30px]">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-[12px] font-semibold uppercase tracking-[1.2px] text-gray">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </RevealOnScroll>
 
       </div>
     </section>

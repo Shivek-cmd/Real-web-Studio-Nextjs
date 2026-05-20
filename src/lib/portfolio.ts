@@ -242,7 +242,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A marketplace connecting 600+ CICC-certified consultants with visa applicants had a confusing user journey. We rebuilt the booking flow with clear steps and trust signals, doubling monthly bookings within two months.",
     image:
-      "https://images.pexels.com/photos/4427616/pexels-photo-4427616.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "/portfolio/getsetvisa/screenshot_1.5x_postspark_2026-05-20_22-31-27.png",
     tags: ["Web Design", "Lead Gen", "UX Design", "Booking Flow", "Marketplace"],
     website: "https://www.getsetvisa.com",
     service: "UX + Booking Flow",
@@ -269,7 +269,16 @@ export const portfolioItems: PortfolioItem[] = [
           "Consultant credibility cues were placed before high-commitment actions.",
           "Repeated CTA language helped users understand exactly what would happen next.",
         ],
-        images: planningImages,
+        images: [
+          {
+            src: "/portfolio/getsetvisa/screenshot_1.5x_postspark_2026-05-20_22-31-51.png",
+            alt: "Get Set Visa website screenshot showing consultant marketplace journey",
+          },
+          {
+            src: "/portfolio/getsetvisa/screenshot_1.5x_postspark_2026-05-20_22-32-13.png",
+            alt: "Get Set Visa website screenshot showing immigration consultant booking flow",
+          },
+        ],
       },
       {
         label: "Conversion",
@@ -279,7 +288,13 @@ export const portfolioItems: PortfolioItem[] = [
           "Mobile screens were simplified for easier comparison and action.",
           "The updated page hierarchy supported both marketplace discovery and direct conversion.",
         ],
-        images: [workshopImage],
+        images: [
+          {
+            src: "/portfolio/getsetvisa/screenshot_1.5x_postspark_2026-05-20_22-32-51.png",
+            alt: "Get Set Visa website screenshot showing visa consultation conversion content",
+            wide: true,
+          },
+        ],
       },
     ],
   },

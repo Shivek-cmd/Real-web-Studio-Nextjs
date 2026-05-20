@@ -11,16 +11,16 @@ export default function BookingCalendar() {
             Prefer to Talk First?
           </h2>
           <p className="mx-auto mt-4 max-w-[480px] text-[16px] leading-[1.7] text-gray">
-            Book a free 15-minute discovery call. We'll answer your questions and figure out the best plan for your business.
+            Book a free 15-minute discovery call. We&apos;ll answer your questions and figure out the best plan for your business.
           </p>
         </div>
 
         <div className="overflow-hidden rounded-[14px] border border-site-border shadow-card">
           <iframe
             src="https://api.leadconnectorhq.com/widget/booking/QZbyg6axqsgkINmlfT6a"
-            style={{ width: "100%", height: "700px", border: "none", display: "block" }}
+            style={{ width: "100%", border: "none", overflow: "hidden" }}
             scrolling="no"
-            id="QZbyg6axqsgkINmlfT6a_1775755299382"
+            id="QZbyg6axqsgkINmlfT6a_1779297112087"
             title="Book a Discovery Call — RealWebStudio"
             className="h-[700px] min-h-[700px] w-full"
           />

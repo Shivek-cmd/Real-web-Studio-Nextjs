@@ -25,24 +25,38 @@ const sharedTwitterDefaults = {
 
 export const seoConfig = {
   home: {
-    title: "RealWebStudio | Custom Websites for Canadian Small Businesses",
+    title: "Best Website Design & Development Company In Canada",
     description:
-      "Done-for-you websites for Canadian small businesses - live in 3 to 7 days, starting at $9.99/month. Proudly serving Edmonton, Calgary, Vancouver, Toronto, and all of Canada.",
+      "Real Web Studio is a Canada-based web design company offering modern website design, eCommerce development, SEO-friendly websites, and digital solutions for businesses across Canada.",
+    keywords: [
+      "website design Canada",
+      "web development company Canada",
+      "custom website design",
+      "responsive web design",
+      "ecommerce website development",
+      "SEO friendly websites",
+      "business website design",
+      "website designer Canada",
+      "web agency Canada",
+      "professional website development",
+      "WordPress website design",
+      "small business websites Canada",
+    ],
     alternates: { canonical: `${SITE_URL}/` },
     robots: { index: true, follow: true },
     openGraph: {
       ...sharedOpenGraphDefaults,
       url: `${SITE_URL}/`,
-      title: "RealWebStudio | Custom Websites for Canadian Small Businesses",
+      title: "Best Website Design & Development Company In Canada",
       description:
-        "Done-for-you websites for Canadian small businesses - live in 3 to 7 days, starting at $9.99/month.",
+        "Real Web Studio is a Canada-based web design company offering modern website design, eCommerce development, SEO-friendly websites, and digital solutions for businesses across Canada.",
       images: [OG_IMAGE],
     },
     twitter: {
       ...sharedTwitterDefaults,
-      title: "RealWebStudio | Custom Websites for Canadian Small Businesses",
+      title: "Best Website Design & Development Company In Canada",
       description:
-        "Done-for-you websites for Canadian small businesses - live in 3 to 7 days, starting at $9.99/month.",
+        "Real Web Studio is a Canada-based web design company offering modern website design, eCommerce development, SEO-friendly websites, and digital solutions for businesses across Canada.",
     },
   } satisfies Metadata,
 

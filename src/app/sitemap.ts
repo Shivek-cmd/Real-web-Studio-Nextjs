@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { portfolioItems } from "@/lib/portfolio";
+import { cities } from "@/lib/cities";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${SITE_URL}/web-design`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/portfolio`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
@@ -30,5 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...portfolioRoutes];
+  const cityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${SITE_URL}/web-design/${city.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: city.tier === 1 ? 0.85 : 0.75,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...portfolioRoutes, ...cityRoutes];
 }

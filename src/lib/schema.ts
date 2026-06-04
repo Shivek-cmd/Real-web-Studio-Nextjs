@@ -1,5 +1,6 @@
 import { blogPosts, type BlogPost } from "@/lib/blog";
 import { portfolioItems, type PortfolioItem } from "@/lib/portfolio";
+import { type City } from "@/lib/cities";
 import { absoluteUrl, BUSINESS, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export function organizationSchema() {
@@ -267,6 +268,85 @@ export function portfolioListingSchema() {
           name: `${item.client} Case Study`,
         })),
       },
+    },
+  ];
+}
+
+export function cityPageSchema(city: City) {
+  const path = `/web-design/${city.slug}`;
+  const name = `Web Design ${city.name}`;
+  const description = `Professional web design in ${city.name}, ${city.provinceName}. RealWebStudio builds fast, modern websites for ${city.name} small businesses starting at $9.99/mo.`;
+  return [
+    breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Web Design", url: "/web-design" },
+      { name: city.name, url: path },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${absoluteUrl(path)}#webpage`,
+      name,
+      description,
+      url: absoluteUrl(path),
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "en-CA",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${absoluteUrl(path)}#service`,
+      name: `Web Design Services in ${city.name}`,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: {
+        "@type": "City",
+        name: city.name,
+        containedInPlace: {
+          "@type": "Province",
+          name: city.provinceName,
+          containedInPlace: { "@type": "Country", name: "Canada" },
+        },
+      },
+      serviceType: "Website design and digital marketing",
+      url: absoluteUrl(path),
+      offers: {
+        "@type": "Offer",
+        price: "9.99",
+        priceCurrency: "CAD",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/pricing`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: `How much does web design cost in ${city.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `RealWebStudio offers professional web design in ${city.name} starting at $9.99/month — all-inclusive with hosting, SSL, and ongoing support. No setup fees, no lock-in contracts.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: `How long does it take to launch a website in ${city.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `Most ${city.name} websites are live within 72 hours of you submitting your business information. Complex sites may take 5–7 business days.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: `Do you serve businesses in ${city.name}, ${city.provinceName}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `Yes! RealWebStudio serves businesses across ${city.provinceName} and all of Canada, including ${city.name}. Our service is 100% remote — no in-person meetings needed.`,
+          },
+        },
+      ],
     },
   ];
 }

@@ -203,10 +203,10 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="text-[32px] font-extrabold leading-[1.2] tracking-[-0.5px] text-site-text sm:text-[40px]"
           >
-            We provide complete business growth solutions, from website design and development to SEO, Google Ads, and digital marketing services that help businesses grow online and generate more customers.
+            Everything You Need to Grow Online
           </motion.h2>
-          <p className="mx-auto mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray">
-            Beyond your website — hover each card to explore the full service.
+          <p className="mx-auto mt-4 max-w-[1080px] text-[15px] leading-[1.7] text-gray">
+            We provide complete business growth solutions, from website design and development to SEO, Google Ads, and digital marketing services that help businesses grow online and generate more customers.
           </p>
         </div>
 

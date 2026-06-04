@@ -109,7 +109,7 @@ export default function WhySection() {
           >
             Getting a Website Should not Be This Hard
           </motion.h2>
-          <p className="mx-auto mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray">
+          <p className="mx-auto mt-4 max-w-[1080px] text-[15px] leading-[1.7] text-gray">
             Small business owners in Canada face the same four obstacles over and over again.
             RealWebStudio is a professional website design and development company in Canada, built to eliminate every single one.
           </p>

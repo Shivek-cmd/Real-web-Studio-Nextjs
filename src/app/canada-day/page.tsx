@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import CanadaDayBanner from "@/components/canada-day/CanadaDayBanner";
 import CanadaDayHero from "@/components/canada-day/CanadaDayHero";
-import DealSection from "@/components/canada-day/DealSection";
-import ClaimSection from "@/components/canada-day/ClaimSection";
-import ActivityTicker from "@/components/canada-day/ActivityTicker";
-import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Canada Day Deal | $9.99/mo Websites for Canadian Businesses — RealWebStudio",
@@ -52,10 +48,6 @@ export default function CanadaDayPage() {
     <>
       <CanadaDayBanner />
       <CanadaDayHero />
-      <DealSection />
-      <ClaimSection />
-      <ActivityTicker />
-      <FinalCTA />
     </>
   );
 }

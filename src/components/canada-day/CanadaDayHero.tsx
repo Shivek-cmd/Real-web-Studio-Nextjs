@@ -21,14 +21,14 @@ type TimeLeft = { d: number; h: number; m: number; s: number };
 
 function CountdownBox({ value, label }: { value: number | null; label: string }) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative flex h-[76px] w-[76px] items-center justify-center rounded-[16px] border border-white/12 bg-white/6 backdrop-blur-sm">
-        <span className="text-[30px] font-extrabold leading-none tracking-[-1px] text-white">
+    <div className="flex flex-col items-center gap-1.5">
+      <div className="relative flex h-13 w-13 items-center justify-center rounded-sm border border-white/12 bg-white/6 backdrop-blur-sm sm:h-16 sm:w-16 sm:rounded-[13px] md:h-19 md:w-19 md:rounded-2xl">
+        <span className="text-[20px] font-extrabold leading-none tracking-[-1px] text-white sm:text-[26px] md:text-[30px]">
           {value === null ? "--" : String(value).padStart(2, "0")}
         </span>
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
       </div>
-      <span className="text-[10px] font-bold uppercase tracking-[2.5px] text-white/35">
+      <span className="text-[9px] font-bold uppercase tracking-[1.5px] text-white/35 sm:text-[10px] sm:tracking-[2px]">
         {label}
       </span>
     </div>
@@ -56,6 +56,16 @@ export default function CanadaDayHero() {
     tick();
     const id = setInterval(tick, 1_000);
     return () => clearInterval(id);
+  }, []);
+
+  // GHL form_embed.js runs once at page load — before this client component mounts.
+  // Re-append the script after mount so it finds the iframe and initialises it.
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => script.remove();
   }, []);
 
   const spotsUsed = spots === null ? 0 : 100 - spots;
@@ -113,7 +123,7 @@ export default function CanadaDayHero() {
           {/* Big price */}
           <motion.div {...fu(1)} className="mb-3">
             <div className="flex items-end gap-3">
-              <span className="text-[72px] font-extrabold leading-none tracking-[-3px] text-white sm:text-[88px]">
+              <span className="text-[56px] font-extrabold leading-none tracking-[-3px] text-white sm:text-[72px] lg:text-[88px]">
                 $9.99
               </span>
               <div className="mb-3 flex flex-col gap-1">
@@ -134,13 +144,13 @@ export default function CanadaDayHero() {
             <p className="mb-4 text-[11px] font-bold uppercase tracking-[2.5px] text-white/30">
               Deal ends in
             </p>
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-1.5 sm:gap-2.5 md:gap-3">
               <CountdownBox value={time?.d ?? null} label="Days" />
-              <span className="mt-5 text-[22px] font-light text-white/20">:</span>
+              <span className="mt-4 text-[14px] font-light text-white/20 sm:mt-5 sm:text-[18px] md:text-[22px]">:</span>
               <CountdownBox value={time?.h ?? null} label="Hours" />
-              <span className="mt-5 text-[22px] font-light text-white/20">:</span>
+              <span className="mt-4 text-[14px] font-light text-white/20 sm:mt-5 sm:text-[18px] md:text-[22px]">:</span>
               <CountdownBox value={time?.m ?? null} label="Mins" />
-              <span className="mt-5 text-[22px] font-light text-white/20">:</span>
+              <span className="mt-4 text-[14px] font-light text-white/20 sm:mt-5 sm:text-[18px] md:text-[22px]">:</span>
               <CountdownBox value={time?.s ?? null} label="Secs" />
             </div>
           </motion.div>
@@ -230,8 +240,6 @@ export default function CanadaDayHero() {
             data-form-id="HvqhZBIyHJPergCe8UQF"
             title="Canada Day Page Form"
             className="h-134.25 min-h-134.25 w-full border-0"
-            loading="lazy"
-            scrolling="no"
           />
 
           <p className="mt-3 text-center text-[11px] text-gray">

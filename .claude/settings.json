@@ -8,7 +8,12 @@
       "WebFetch(domain:optiwaysimmigration.com)",
       "WebFetch(domain:oilcityreadymix.com)",
       "WebSearch",
-      "WebFetch(domain:images.pexels.com)"
+      "WebFetch(domain:images.pexels.com)",
+      "Read(//d/Chrishan Solution/RealWebStudio/**)"
+    ],
+    "additionalDirectories": [
+      "D:\\Chrishan Solution\\RealWebStudio\\Workflows",
+      "D:\\Chrishan Solution\\RealWebStudio\\pipelines"
     ]
   }
 }

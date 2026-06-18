@@ -97,7 +97,7 @@ export default function CanadaDayBanner() {
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
           <Link
-            href="#claim"
+            href="#hero-form"
             className="rounded-full bg-orange px-5 py-[7px] text-[12px] font-bold text-white shadow-orange transition-all duration-200 hover:bg-orange-dark"
           >
             Claim Now →

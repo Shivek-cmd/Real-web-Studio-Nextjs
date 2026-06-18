@@ -58,7 +58,7 @@ export default function CanadaDayHero() {
     return () => clearInterval(id);
   }, []);
 
-  const spotsUsed = spots === null ? 0 : 90 - spots;
+  const spotsUsed = spots === null ? 0 : 100 - spots;
 
   return (
     <section
@@ -159,27 +159,27 @@ export default function CanadaDayHero() {
             <div className="mb-3 h-2 overflow-hidden rounded-full bg-white/8">
               <div
                 className="h-full rounded-full bg-linear-to-r from-orange to-[#D80621] transition-all duration-1000"
-                style={{ width: `${(spotsUsed / 90) * 100}%` }}
+                style={{ width: `${spotsUsed}%` }}
               />
             </div>
             <div className="flex items-end gap-2">
               <span className="text-[38px] font-extrabold leading-none tracking-[-1.5px] text-white">
                 {spots === null ? "--" : spots}
               </span>
-              <span className="mb-1 text-[13px] text-white/35">of 90 spots left</span>
+              <span className="mb-1 text-[13px] text-white/35">of 100 spots left</span>
             </div>
           </motion.div>
 
           {/* CTA */}
           <motion.div {...fu(5)} className="mb-7 flex flex-wrap items-center gap-3">
             <Link
-              href="/contact"
+              href="#hero-form"
               className="rounded-full bg-orange px-8 py-[14px] text-[15px] font-bold text-white shadow-orange transition-all duration-200 hover:-translate-y-px hover:bg-orange-dark"
             >
               🍁 Claim My Spot →
             </Link>
             <Link
-              href="/contact"
+              href="#hero-form"
               className="rounded-full border border-white/25 px-7 py-[13px] text-[14px] font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-orange hover:text-orange"
             >
               Book a Free Call
@@ -204,6 +204,7 @@ export default function CanadaDayHero() {
 
         {/* ── RIGHT: Form ───────────────────────────────── */}
         <motion.div
+          id="hero-form"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
@@ -214,18 +215,21 @@ export default function CanadaDayHero() {
           </div>
 
           <iframe
-            src="https://api.leadconnectorhq.com/widget/form/ZgZvuabNtIRtYTaCsSWy"
-            id="inline-canada-day-hero-form"
+            src="https://api.leadconnectorhq.com/widget/form/HvqhZBIyHJPergCe8UQF"
+            id="inline-HvqhZBIyHJPergCe8UQF"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
+            data-trigger-value=""
             data-activation-type="alwaysActivated"
+            data-activation-value=""
             data-deactivation-type="neverDeactivate"
-            data-form-name="Canada Day Deal"
-            data-height="504"
-            data-layout-iframe-id="inline-canada-day-hero-form"
-            data-form-id="ZgZvuabNtIRtYTaCsSWy"
-            title="Claim Canada Day Deal — RealWebStudio"
-            className="h-[530px] min-h-[530px] w-full border-0"
+            data-deactivation-value=""
+            data-form-name="Canada Day Page Form"
+            data-height="537"
+            data-layout-iframe-id="inline-HvqhZBIyHJPergCe8UQF"
+            data-form-id="HvqhZBIyHJPergCe8UQF"
+            title="Canada Day Page Form"
+            className="h-134.25 min-h-134.25 w-full border-0"
             loading="lazy"
             scrolling="no"
           />

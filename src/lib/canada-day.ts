@@ -17,11 +17,11 @@ export function getSpotsRemaining(): number {
 
   // exponent > 1 → slow start, fast finish (urgency ramps near July 1)
   const curved  = Math.pow(progress, 1.2);
-  const base    = Math.round(90 * (1 - curved));
+  const base    = Math.round(100 * (1 - curved));
 
   // stable per-hour nudge so the number ticks down naturally, not every second
   const hourIndex = Math.floor(elapsed / 3_600_000);
   const variation = (hourIndex % 5) - 2; // cycles -2 -1 0 1 2 -2 -1 …
 
-  return Math.max(0, Math.min(90, base + variation));
+  return Math.max(0, Math.min(100, base + variation));
 }
